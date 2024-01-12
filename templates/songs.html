@@ -17,15 +17,55 @@
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
     <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+      }
+    </style>
   </head>
   <body>
-    <button>
+    <button
+      class="ui button"
+      style="margin-top: 1%; margin-left: 1%; margin-bottom: 2%"
+    >
       <a href="/">Go Back</a>
     </button>
-    All the songs will be listed here {% for song in all_songs %}
-    <h1>{{song.title}}</h1>
-    {% for artist in song.artists.all %}
-    <h2>{{artist.name}}</h2>
-    {% endfor %} {% endfor %}
+
+    <div
+      style="
+        color: aliceblue;
+        display: flex;
+        flex-direction: row;
+        margin-left: 20%;
+        font-size: 40px;
+      "
+    >
+      <div style="width: 50%">
+        <span>Title</span>
+      </div>
+      <div style="width: 50%">
+        <span>Description</span>
+      </div>
+    </div>
+
+    {% for song in all_songs %}
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 2%;
+      "
+    >
+      <div style="color: aliceblue; font-size: 24px">{{song.title}}</div>
+      ||
+      <div>
+        {% for artist in song.artists.all %}
+        <span style="color: aliceblue; font-size: 24px">{{artist.name}} ,</span>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% endfor %}
   </body>
 </html>
