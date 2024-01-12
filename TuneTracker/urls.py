@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home,name="home"),
-    # path('', views.predict,name="predict"),
+    path('all_songs', views.all_songs,name="predict"),
 
    
 ]

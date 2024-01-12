@@ -7,11 +7,11 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Hello world</h1>
-
-    <!-- form -->
-    <button>
-      <a href="/all_songs">View all Songs</a>
-    </button>
+    All the songs will be listed here {% for song in all_songs %}
+    <h1>{{song.title}}</h1>
+    {% for artist in song.artists.all %}
+    <h2>{{artist.name}}</h2>
+    {% endfor %} 
+    {% endfor %}
   </body>
 </html>

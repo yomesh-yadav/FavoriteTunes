@@ -111,6 +111,14 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+# LOGGING = {
+#     # ...
+#     'loggers': {
+#         'django.db.backends': {
+#             'level': 'DEBUG',
+#         },
+#     },
+# }
 
 
 # Static files (CSS, JavaScript, Images)
